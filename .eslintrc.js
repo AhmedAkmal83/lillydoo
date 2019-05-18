@@ -18,5 +18,13 @@ module.exports = {
     parserOptions: {
         parser: 'babel-eslint',
         ecmaVersion: 6
+    },
+    "globals": {
+        "Vue": 'readonly',
+        "Vuex": 'readonly',
+        "$": 'readonly',
+        "jQuery": 'readonly',
+        "whatInput": 'readonly',
+        "Foundation": 'readonly'
     }
 }
