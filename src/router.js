@@ -9,6 +9,13 @@ export default new Router({
         {
             path: '/',
             name: 'home',
+            meta: { layout: 'content-minimal' },
+            component: Home
+        },
+        {
+            path: '/alternate',
+            name: 'alternate',
+            meta: { layout: 'content-full' },
             component: Home
         }
     ]
