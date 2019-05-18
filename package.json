@@ -26,8 +26,11 @@
         "babel-jest": "^23.6.0",
         "eslint": "^5.16.0",
         "eslint-plugin-vue": "^5.0.0",
+        "foundation-sites": "^6.5.3",
+        "jquery": "^3.4.1",
         "node-sass": "^4.9.0",
         "sass-loader": "^7.1.0",
-        "vue-template-compiler": "^2.5.21"
+        "vue-template-compiler": "^2.5.21",
+        "what-input": "^5.2.1"
     }
 }
