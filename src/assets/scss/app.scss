@@ -1,6 +1,15 @@
 /******************
 * CUSTOM SETTINGS *
 ******************/
+@font-face {
+    font-family: 'museo_300';
+    src: url('assets/scss/webfonts/museo300/396345_0_0.eot');
+    src: url('assets/scss/webfonts/museo300/396345_0_0.eot?#iefix') format('embedded-opentype'),
+         url('assets/scss/webfonts/museo300/396345_0_0.woff2') format('woff2'),
+         url('assets/scss/webfonts/museo300/396345_0_0.woff') format('woff'),
+         url('assets/scss/webfonts/museo300/396345_0_0.ttf') format('truetype');
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
 @import './_custom-settings';
 
 
