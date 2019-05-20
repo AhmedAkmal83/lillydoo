@@ -2,7 +2,7 @@
 * CUSTOM SETTINGS *
 ******************/
 @font-face {
-    font-family: 'museo_300';
+    font-family: 'Museo-300';
     src: url('assets/scss/webfonts/museo300/396345_0_0.eot');
     src: url('assets/scss/webfonts/museo300/396345_0_0.eot?#iefix') format('embedded-opentype'),
          url('assets/scss/webfonts/museo300/396345_0_0.woff2') format('woff2'),
@@ -10,7 +10,6 @@
          url('assets/scss/webfonts/museo300/396345_0_0.ttf') format('truetype');
 }
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
-@import './_custom-settings';
 
 
 /*****************************
@@ -29,9 +28,9 @@
 @include foundation-typography;
 
 // Grids (choose one)
-@include foundation-xy-grid-classes;
+// @include foundation-xy-grid-classes;
 // @include foundation-grid;
-// @include foundation-flex-grid;
+@include foundation-flex-grid;
 
 // Generic components
 @include foundation-button;
@@ -73,10 +72,23 @@
 @include foundation-top-bar;
 
 // Helpers
-@include foundation-float-classes;
-// @include foundation-flex-classes;
+// @include foundation-float-classes;
+@include foundation-flex-classes;
 @include foundation-visibility-classes;
 // @include foundation-prototype-classes;
+
+
+/*****************
+* CUSTOM HELPERS *
+*****************/
+@import './_custom-settings';
+@import './_custom-helpers';
+
+@include custom-color-helpers;
+@include custom-margin-helpers;
+@include custom-padding-helpers;
+@include custom-width-helpers;
+@include custom-height-helpers;
 
 
 /****************

@@ -1,0 +1,102 @@
+/*
+* Generate color and background helpers for the whole foundation palette
+* (.color-* , .bg-*) 
+*/
+@mixin custom-color-helpers {
+    @each $name, $color in $foundation-palette {
+        .color-#{$name} {
+            color: unquote($color + ' !important');
+        }
+        .bg-#{$name} {
+            background-color: unquote($color + ' !important');
+        }
+    }
+}
+
+/*
+* Generate margin helpers for the defined spacers
+* (.mt-* , .mr-*, .mb-*, .ml-*, .mx-*, .my-*, .m-*) 
+*/
+@mixin custom-margin-helpers {
+    @each $name, $value in $custom-spacers {
+        .mt-#{$name} {
+            margin-top: unquote($value + ' !important');
+        }
+        .mr-#{$name} {
+            margin-right: unquote($value + ' !important');
+        }
+        .mb-#{$name} {
+            margin-bottom: unquote($value + ' !important');
+        }
+        .ml-#{$name} {
+            margin-left: unquote($value + ' !important');
+        }
+        .mx-#{$name} {
+            margin-right: unquote($value + ' !important');
+            margin-left: unquote($value + ' !important');
+        }
+        .my-#{$name} {
+            margin-top: unquote($value + ' !important');
+            margin-bottom: unquote($value + ' !important');
+        }
+        .m-#{$name} {
+            margin: unquote($value + ' !important');
+        }
+    }
+}
+
+/*
+* Generate padding helpers for the defined spacers
+* (.pt-* , .pr-*, .pb-*, .pl-*, .px-*, .py-*, .p-*) 
+*/
+@mixin custom-padding-helpers {
+    @each $name, $value in $custom-spacers {
+        .pt-#{$name} {
+            padding-top: unquote($value + ' !important');
+        }
+        .pr-#{$name} {
+            padding-right: unquote($value + ' !important');
+        }
+        .pb-#{$name} {
+            padding-bottom: unquote($value + ' !important');
+        }
+        .pl-#{$name} {
+            padding-left: unquote($value + ' !important');
+        }
+        .px-#{$name} {
+            padding-right: unquote($value + ' !important');
+            padding-left: unquote($value + ' !important');
+        }
+        .py-#{$name} {
+            padding-top: unquote($value + ' !important');
+            padding-bottom: unquote($value + ' !important');
+        }
+        .p-#{$name} {
+            padding: unquote($value + ' !important');
+        }
+    }
+}
+
+/*
+* Generate width helpers
+* (.w-*) 
+*/
+@mixin custom-width-helpers {
+    @each $value in $custom-percentages {
+        .w-#{$value} {
+            width: unquote($value + '% !important');
+        }
+    }
+}
+
+/*
+* Generate height helpers
+* (.h-*) 
+*/
+@mixin custom-height-helpers {
+    @each $value in $custom-percentages {
+        .h-#{$value} {
+            height: unquote($value + '% !important');
+        }
+    }
+}
