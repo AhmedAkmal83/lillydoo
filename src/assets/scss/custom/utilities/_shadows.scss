@@ -1,0 +1,25 @@
+/*
+* Generate shadow helpers for (all sides, top right, bottom right, bottom left, top left)
+* (.shadow , .shadow-tr, .shadow-br, .shadow-bl, .shadow-tl) 
+*/
+@mixin custom-shadow-helpers {
+    .shadow {
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.02), 0px 0px 10px rgba(0,0,0,0.12);
+    }
+
+    .shadow-tr {
+        box-shadow: 3px -1px 12px rgba(0,0,0,0.02), 3px -1px 8px rgba(0,0,0,0.12);
+    }
+
+    .shadow-br {
+        box-shadow: 3px 1px 12px rgba(0,0,0,0.02), 3px 1px 8px rgba(0,0,0,0.12);
+    }
+    
+    .shadow-bl {
+        box-shadow: -3px 1px 12px rgba(0,0,0,0.02), -3px 1px 8px rgba(0,0,0,0.12);
+    }
+
+    .shadow-tl {
+        box-shadow: -3px -1px 12px rgba(0,0,0,0.02), -3px -1px 8px rgba(0,0,0,0.12);
+    }
+}

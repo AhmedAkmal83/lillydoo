@@ -1,0 +1,31 @@
+section.testpacket-header {
+    background: #e2e2e0 no-repeat center / cover;
+    height: 100vh;
+    min-height: 320px;
+    max-height: 550px;
+    position: relative;
+    & .oekotex-certificate {
+        position: absolute;
+        top: 56%;
+        right: 3%;
+        width: 27%;
+    }
+}
+
+@media only screen and #{breakpoint(medium up)} {
+    section.testpacket-header .oekotex-certificate {
+        top: 46%;
+        right: 7%;
+        width: 21%;
+    }
+}
+@media only screen and #{breakpoint(large up)} {
+    section.testpacket-header {
+        height: 37vw;
+        & .oekotex-certificate {
+            top: 14%;
+            right: 3%;
+            width: 12%;
+        }
+    }
+}

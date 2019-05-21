@@ -1,19 +1,4 @@
 /*
-* Generate color and background helpers for the whole foundation palette
-* (.color-* , .bg-*) 
-*/
-@mixin custom-color-helpers {
-    @each $name, $color in $foundation-palette {
-        .color-#{$name} {
-            color: unquote($color + ' !important');
-        }
-        .bg-#{$name} {
-            background-color: unquote($color + ' !important');
-        }
-    }
-}
-
-/*
 * Generate margin helpers for the defined spacers
 * (.mt-* , .mr-*, .mb-*, .ml-*, .mx-*, .my-*, .m-*) 
 */
@@ -73,30 +58,6 @@
         }
         .p-#{$name} {
             padding: unquote($value + ' !important');
-        }
-    }
-}
-
-/*
-* Generate width helpers
-* (.w-*) 
-*/
-@mixin custom-width-helpers {
-    @each $value in $custom-percentages {
-        .w-#{$value} {
-            width: unquote($value + '% !important');
-        }
-    }
-}
-
-/*
-* Generate height helpers
-* (.h-*) 
-*/
-@mixin custom-height-helpers {
-    @each $value in $custom-percentages {
-        .h-#{$value} {
-            height: unquote($value + '% !important');
         }
     }
 }
