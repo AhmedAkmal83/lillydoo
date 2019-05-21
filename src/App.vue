@@ -20,9 +20,14 @@ export default {
          * Define which layout should be used to serve the current view
          * @return {String} The meta property for the current layout
          */
-        layout () {
+        layout() {
             return this.$route.meta.layout;
         }
+    },
+
+    mounted() {
+        // Initialize foundation JS
+        $(document).foundation();
     }
 };
 </script>

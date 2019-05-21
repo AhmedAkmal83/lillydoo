@@ -1,0 +1,12 @@
+section.testpacket-header {
+    background: #e2e2e0 no-repeat center / cover;
+    height: 100vh;
+    min-height: 320px;
+    max-height: 550px;
+}
+
+@media only screen and #{breakpoint(large up)} {
+    section.testpacket-header {
+        height: 37vw;
+    }
+}
