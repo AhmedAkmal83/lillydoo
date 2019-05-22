@@ -15,7 +15,12 @@
 <script>
 export default {
     // START CONFIGURATION
-    props: ['viewportIsLarge']
+    props: {
+        viewportIsLarge: {
+            type: Boolean,
+            required: true
+        }
+    }
     // END CONFIGURATION
 };
 </script>
