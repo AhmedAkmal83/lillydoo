@@ -1,5 +1,5 @@
 <template>
-    <div class="row align-left align-stretch">
+    <div class="row align-left align-stretch mx-0 mb-4">
         <div v-for="(button, index) in buttons" :key="index" class="columns small-4 large-expand p-1">
             <a class="hollow button color-dark-gray mb-0 expanded h-100" href="#">
                 <p>{{ button.l1 }}</p>

@@ -65,9 +65,9 @@
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 14px; // mod
 $global-width: rem-calc(1200);
-$global-lineheight: 1.5;
+$global-lineheight: 1.4;
 $light-gray: #e6e6e6;
 $medium-gray: #cdcdcd; // mod
 $dark-gray: #7c7c7c; // mod
@@ -140,7 +140,7 @@ $block-grid-max: 8;
 // ------------------
 
 $header-font-family: Montserrat, Helvetica, Roboto, Arial, sans-serif; // mod
-$header-font-weight: 500; // mod
+$header-font-weight: 400; // mod
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
@@ -309,7 +309,7 @@ $button-sizes: (
     tiny: 0.6rem,
     small: 0.75rem,
     default: 0.9rem,
-    large: 1.25rem,
+    large: 1.063rem, // mod
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
