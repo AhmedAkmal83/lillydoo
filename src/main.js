@@ -4,15 +4,11 @@ import App from './App.vue';
 import router from './router';
 import store from './store/index';
 
-// Dependencies imports
-import jQuery from 'jquery';
-import whatInput from 'what-input';
-import Foundation from 'foundation-sites';
-
 // Assigning dependencies' globals
-window.$ = window.jQuery = jQuery;
-window.whatInput = whatInput;
-window.Foundation = Foundation;
+window.Vue = Vue;
+
+// Load dependencies
+require('./dependencies');
 
 Vue.config.productionTip = false;
 

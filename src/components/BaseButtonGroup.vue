@@ -17,7 +17,7 @@ export default {
             type: Array,
             required: true
         }
-    },
+    }
     // END CONFIGURATION
 };
 </script>
