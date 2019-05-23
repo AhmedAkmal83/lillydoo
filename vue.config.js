@@ -1,5 +1,6 @@
 module.exports = {
     publicPath: './',
+    assetsDir: 'assets',
     css: {
         loaderOptions: {
             sass: {

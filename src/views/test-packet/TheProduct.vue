@@ -4,9 +4,18 @@
         <div class="row align-justify">
             <!-- START LEFT SIDE -->
             <div class="columns small-12 large-6">
-                <div v-for="product in products" :key="product.id">
-                    <img v-show="product.selected" :src="buildImageSource(product.id)" alt="">
+                <!-- START PRODUCT WRAPPER -->
+                <div class="product-wrapper text-center">
+                    <!-- START CERITIFICATE IMAGE -->
+                    <img src="@/assets/img/certificates/oekotex/oekotex_de.png" alt="Oeko-Tex Certificate" class="oekotex-certificate shadow">
+                    <!-- END CERITIFICATE IMAGE -->
+                    <!-- START PRODUCT IMAGE -->
+                    <div v-for="product in products" :key="product.id">
+                        <img v-show="product.selected" :src="buildImageSource(product.id)" alt="">
+                    </div>
+                    <!-- END PRODUCT IMAGE -->
                 </div>
+                <!-- END PRODUCT WRAPPER -->
             </div>
             <!-- END LEFT SIDE -->
             <!-- START RIGHT SIDE -->
@@ -144,3 +153,23 @@ export default {
     // END METHODS
 };
 </script>
+
+<style lang="scss" scoped>
+.product-wrapper {
+    position: relative;
+}
+
+.oekotex-certificate {
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    width: 30%;
+}
+
+@media only screen and #{breakpoint(medium up)} {
+    .oekotex-certificate {
+        left: 9%;
+        width: 28%;
+    }
+}
+</style>
