@@ -1,18 +1,17 @@
 <template>
-    <div class="the-header">
-        <section class="testpacket-header" data-interchange="[assets/img/lillydoo-testpaket-header-small.jpg, small], [assets/img/lillydoo-testpaket-header-medium.jpg, medium], [assets/img/lillydoo-testpaket-header-large.jpg, large]">
-
-            <img src="@/assets/img/certificates/oekotex/oekotex_de.png" alt="Oeko-Tex Certificate" class="oekotex-certificate shadow">
-
-            <div class="row" :class="viewportIsLarge ? 'h-100' : 'h-60'">
-                <div class="columns large-6 flex-container flex-dir-column align-center-middle">
-                    <h1 class="text-center">Entdecke unsere Hautfreundlichkeit</h1>
-                    <a href="#" class="button large w-80 mt-3">JETZT DEINE GRÖßE WÄHLEN</a>
-                </div>
+    <section id="the-header" data-interchange="[assets/img/lillydoo-testpaket-header-small.jpg, small], [assets/img/lillydoo-testpaket-header-medium.jpg, medium], [assets/img/lillydoo-testpaket-header-large.jpg, large]">
+        <!-- START CERITIFICATE IMAGE -->
+        <img src="@/assets/img/certificates/oekotex/oekotex_de.png" alt="Oeko-Tex Certificate" class="oekotex-certificate shadow">
+        <!-- END CERITIFICATE IMAGE -->
+        <!-- START WRAPPING ROW -->
+        <div class="row" :class="viewportIsLarge ? 'h-100' : 'h-60'">
+            <div class="columns large-6 flex-container flex-dir-column align-center-middle">
+                <h1 class="text-center">Entdecke unsere Hautfreundlichkeit</h1>
+                <a href="#the-product" class="button large w-80 mt-3">JETZT DEINE GRÖßE WÄHLEN</a>
             </div>
-
-        </section>
-    </div>
+        </div>
+        <!-- END WRAPPING ROW -->
+    </section>
 </template>
 
 <script>
@@ -29,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section.testpacket-header {
+section {
     background: #e2e2e0 no-repeat center / cover;
     height: 100vh;
     min-height: 320px;
@@ -44,7 +43,7 @@ section.testpacket-header {
 }
 
 @media only screen and #{breakpoint(medium up)} {
-    section.testpacket-header .oekotex-certificate {
+    section .oekotex-certificate {
         top: 46%;
         right: 7%;
         width: 21%;
@@ -52,7 +51,7 @@ section.testpacket-header {
 }
 
 @media only screen and #{breakpoint(large up)} {
-    section.testpacket-header {
+    section {
         height: 37vw;
         & .oekotex-certificate {
             top: 14%;

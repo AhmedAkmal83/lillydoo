@@ -5,3 +5,12 @@ h1 {
 .uppercase {
     text-transform: uppercase;
 }
+
+section {
+    &.bright {
+        background: #fff
+    }
+    &.dark {
+        background: #f8f8f8
+    }
+}

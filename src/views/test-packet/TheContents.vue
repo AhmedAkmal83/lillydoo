@@ -1,7 +1,7 @@
 <template>
-    <div class="the-contents">
+    <section id="the-contents" class="bright py-5">
         <p>Contents section placeholder</p>
-    </div>
+    </section>
 </template>
 
 <script>

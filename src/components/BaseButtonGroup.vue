@@ -1,9 +1,9 @@
 <template>
     <div class="row align-left align-stretch mx-0 mb-4">
-        <div v-for="(button, index) in buttons" :key="index" class="columns small-4 large-expand p-1">
-            <a class="hollow button color-dark-gray mb-0 expanded h-100" href="#">
-                <p>{{ button.l1 }}</p>
-                <span>{{ button.l2 }}</span>
+        <div v-for="product in products" :key="product.id" class="columns small-4 large-expand p-1">
+            <a class="button mb-0 expanded h-100" :class="product.selected ? 'active' : 'hollow color-dark-gray'" href="#" @click.prevent.stop="$emit('clicked', product.id)">
+                <p>{{ product.button.l1 }}</p>
+                <span>{{ product.button.l2 }}</span>
             </a>
         </div>
     </div>
@@ -13,11 +13,11 @@
 export default {
     // START CONFIGURATION
     props: {
-        buttons: {
+        products: {
             type: Array,
             required: true
         }
-    }
+    },
     // END CONFIGURATION
 };
 </script>
@@ -39,6 +39,12 @@ a.button {
         line-height: 1.4;
         color: $dark-gray;
         margin-bottom: 0.2rem;
+    }
+    &.active {
+        border: 1px solid get-color(primary);
+        & span, p {
+            color: $white;
+        }
     }
 }
 </style>

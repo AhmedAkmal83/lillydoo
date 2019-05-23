@@ -10,11 +10,14 @@ import ContentFull from '@/layouts/ContentFull';
 import ContentMinimal from '@/layouts/ContentMinimal';
 
 export default {
+    // START CONFIGURATION
     components: {
         ContentFull,
         ContentMinimal
     },
+    // END CONFIGURATION
 
+    // START COMPUTED
     computed: {
         /**
          * Define which layout should be used to serve the current view
@@ -24,11 +27,14 @@ export default {
             return this.$route.meta.layout;
         }
     },
+    // END COMPUTED
 
+    // START HOOKS
     mounted() {
         // Initialize foundation JS
         $(document).foundation();
     }
+    // END HOOKS
 };
 </script>
 
