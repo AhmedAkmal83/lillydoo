@@ -15,7 +15,7 @@
                 <div class="row">
                     <!-- START IMAGE COLUMN -->
                     <div class="columns small-4 pt-5">
-                        <img src="@/assets/img/products/lillydoo-little-blowballs-design-preview-tp.jpg" alt="Lillydoo Windel Design - Little Blowballs">
+                        <img src="@/assets/img/thumbnails/lillydoo-little-blowballs-design-preview-tp.jpg" alt="Lillydoo Windel Design - Little Blowballs">
                     </div>
                     <!-- END IMAGE COLUMN -->
                     <!-- START DESCRIPTION COLUMN -->
@@ -37,7 +37,7 @@
                 <div class="row">
                     <!-- START IMAGE ROW -->
                     <div class="columns small-4 pt-5">
-                        <img src="@/assets/img/products/water-wipes-15-small.jpg" alt="LILLYDOO 15 Feuchttücher mit 99% Wasser">
+                        <img src="@/assets/img/thumbnails/water-wipes-15-small.jpg" alt="LILLYDOO 15 Feuchttücher mit 99% Wasser">
                     </div>
                     <!-- END IMAGE ROW -->
                     <!-- START DESCRIPTION ROW -->

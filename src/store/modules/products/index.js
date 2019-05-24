@@ -5,7 +5,15 @@ import mutations from './mutations.js';
 export default {
 
     state: {
-        diapers: {}
+        activeId: null,
+        primary: {
+            name: '',
+            items: []
+        },
+        secondary: {
+            name: '',
+            items: []
+        }
     },
     actions,
     getters,

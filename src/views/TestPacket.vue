@@ -21,6 +21,13 @@ export default {
         TheProcess,
         TheContents
     },
+
+    props: {
+        backendData: {
+            type: Object,
+            required: true
+        }
+    },
     // END CONFIGURATION
 
     // START DATA
@@ -31,6 +38,19 @@ export default {
     },
     // END DATA
 
+    // START HOOKS
+    created() {
+        // Display with respect to viewport size
+        this.handleViewportSize(Foundation.MediaQuery.current);
+        // Keeping an eye on viewport size and calling handler accordingly
+        $(window).on('changed.zf.mediaquery', (event, newSize, oldSize) => {
+            this.handleViewportSize(newSize);
+        });
+        // Dispatch action to populate store data
+        this.$store.dispatch('initialize', this.backendData);
+    },
+    // END HOOKS
+
     // START METHODS
     methods: {
         /**
@@ -40,16 +60,8 @@ export default {
         handleViewportSize(viewportSize) {
             this.viewportIsLarge = viewportSize.includes('large');
         }
-    },
+    }
     // END METHODS
 
-    // START HOOKS
-    created() {
-        this.handleViewportSize(Foundation.MediaQuery.current);
-        $(window).on('changed.zf.mediaquery', (event, newSize, oldSize) => {
-            this.handleViewportSize(newSize);
-        });
-    }
-    // END HOOKS
 };
 </script>

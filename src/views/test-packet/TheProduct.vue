@@ -11,7 +11,7 @@
                     <!-- END CERITIFICATE IMAGE -->
                     <!-- START PRODUCT IMAGE -->
                     <div v-for="product in products" :key="product.id">
-                        <img v-show="product.selected" :src="buildImageSource(product.id)" alt="">
+                        <img v-show="product.id === activeId" :src="imageData('src')" :alt="imageData('alt')">
                     </div>
                     <!-- END PRODUCT IMAGE -->
                 </div>
@@ -27,7 +27,7 @@
                 <p class="uppercase mb-2">Wähle Deine Größe</p>
                 <!-- END SECONDARY HEADER -->
                 <!-- START BUTTON GROUP -->
-                <base-button-group :products="products" @clicked="handleClick"/>
+                <base-button-group :products="products" :activeId="activeId" @clicked="setActive"/>
                 <!-- END BUTTON GROUP -->
                 <!-- START PRODUCT DESCRIPTION -->
                 <p>Teste jetzt unsere Windeln und Feuchttücher - In Größe 1 - 3 enthält unser Testpaket unsere Feuchttücher mit 99 % Wasser, ab Gr. 4 erhältst Du unsere Sensitiven Feuchttücher. Wir zahlen die Produkte, Du nur den Versand.</p>
@@ -54,6 +54,7 @@
 
 <script>
 import BaseButtonGroup from '@/components/BaseButtonGroup';
+import { mapState } from 'vuex';
 
 export default {
     // START CONFIGURATION
@@ -62,92 +63,37 @@ export default {
     },
     // END CONFIGURATION
 
-    // START DATA
-    data() {
-        return {
-            products: [
-                {
-                    id: 1,
-                    selected: true,
-                    button: {
-                        l1: '1',
-                        l2: '(2-3 KG)'
-                    },
-                    image: {
-                        src: 'test-packet/lillydoo-testpaket-10.jpg',
-                        alt: 'Lillydoo Testpaket mit Windeln in Größe 1 und 15 Feuchttüchern'
-                    }
-                },
-                {
-                    id: 2,
-                    selected: false,
-                    button: {
-                        l1: '2',
-                        l2: '(3-4 KG)'
-                    },
-                    image: {
-                        src: 'test-packet/lillydoo-testpaket-20.jpg',
-                        alt: 'Lillydoo Testpaket mit Windeln in Größe 2 und 15 Feuchttüchern'
-                    }
-                },
-                {
-                    id: 3,
-                    selected: false,
-                    button: {
-                        l1: '3',
-                        l2: '(4-7 KG)'
-                    },
-                    image: {
-                        src: 'test-packet/lillydoo-testpaket-30.jpg',
-                        alt: 'Lillydoo Testpaket mit Windeln in Größe 3 und 15 Feuchttüchern'
-                    }
-                },
-                {
-                    id: 4,
-                    selected: false,
-                    button: {
-                        l1: '4',
-                        l2: '(7-10 KG)'
-                    },
-                    image: {
-                        src: 'test-packet/lillydoo-testpaket-40.jpg',
-                        alt: 'Lillydoo Testpaket mit Windeln in Größe 4 und 15 Feuchttüchern'
-                    }
-                },
-                {
-                    id: 5,
-                    selected: false,
-                    button: {
-                        l1: '5',
-                        l2: '(10-12 KG)'
-                    },
-                    image: {
-                        src: 'test-packet/lillydoo-testpaket-50.jpg',
-                        alt: 'Lillydoo Testpaket mit Windeln in Größe 5 und 15 Feuchttüchern'
-                    }
-                }
-            ]
-        };
+    // START COMPUTED
+    computed: {
+        // Mapping required state objects
+        ...mapState({
+            products: state => state.products.primary.items,
+            activeId: state => state.products.activeId
+        })
     },
-    // END DATA
+    // END COMPUTED
 
     // START METHODS
     methods: {
         /**
-         * Handle switching between products
+         * Start action to set the current active product id in the store
          * @param {Number} id Integer
          */
-        handleClick(id) {
-            this.products.forEach(product => { product.selected = product.id === id; });
+        setActive(id) {
+            this.$store.dispatch('setActive', id);
         },
 
         /**
-         * Build the relative path to product image
+         * Build required image attributes
          * @param {Number} id Integer
          * @return {String}
          */
-        buildImageSource(id) {
-            return require('@/assets/img/' + this.products.find(product => product.id === id).image.src);
+        imageData(attribute) {
+            if (attribute === 'src') {
+                return require('@/assets/img/' + this.products.find(product => product.id === this.activeId).image[attribute]);
+            } else {
+                return this.products.find(product => product.id === this.activeId).image[attribute];
+            }
         }
     }
     // END METHODS

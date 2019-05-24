@@ -1,7 +1,7 @@
 <template>
     <div class="row align-left align-stretch mx-0 mb-4">
         <div v-for="product in products" :key="product.id" class="columns small-4 large-expand p-1">
-            <a class="button mb-0 expanded h-100" :class="product.selected ? 'active' : 'hollow color-dark-gray'" href="#" @click.prevent.stop="$emit('clicked', product.id)">
+            <a class="button mb-0 expanded h-100" :class="activeId === product.id ? 'active' : 'hollow color-dark-gray'" href="#" @click.prevent.stop="$emit('clicked', product.id)">
                 <p>{{ product.button.l1 }}</p>
                 <span>{{ product.button.l2 }}</span>
             </a>
@@ -15,6 +15,10 @@ export default {
     props: {
         products: {
             type: Array,
+            required: true
+        },
+        activeId: {
+            type: Number,
             required: true
         }
     }
