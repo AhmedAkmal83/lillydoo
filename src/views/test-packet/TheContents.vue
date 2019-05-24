@@ -80,9 +80,9 @@ export default {
          * @return {Mixed} Array || String
          */
         getPrimary(type, property) {
-            let item = this.primary.find(product => product.id === this.activeId);
+            let product = this.primary.find(product => product.id === this.activeId);
 
-            return type === 'image' ? this.image(item, property) : this.description(item, property);
+            return type === 'image' ? this.image(product, property) : this.description(product, property);
         },
 
         /**
@@ -92,9 +92,9 @@ export default {
          */
         getSecondary(type, property) {
             let name = this.primary.find(product => product.id === this.activeId).secondaryProduct;
-            let item = this.secondary.find(product => product.name === name);
+            let product = this.secondary.find(product => product.name === name);
 
-            return type === 'image' ? this.image(item, property) : this.description(item, property);
+            return type === 'image' ? this.image(product, property) : this.description(product, property);
         },
 
         /**
@@ -103,22 +103,22 @@ export default {
          * @param {String} property
          * @return {String}
          */
-        image(item, property) {
+        image(product, property) {
             if (property === 'src') {
-                return require('@/assets/img/' + item.thumbnail[property]);
+                return require('@/assets/img/' + product.thumbnail[property]);
             } else {
-                return item.thumbnail[property];
+                return product.thumbnail[property];
             }
         },
 
         /**
          * Provide header or description items from product's description
-         * @param {Object} item
+         * @param {Object} product
          * @param {String} property
          * @return {Mixed} Array || String
          */
-        description(item, property) {
-            return item.description[property];
+        description(product, property) {
+            return product.description[property];
         }
     }
     // END COMPUTED

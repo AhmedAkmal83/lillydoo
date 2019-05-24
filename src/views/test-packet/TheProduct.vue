@@ -10,9 +10,12 @@
                     <img src="@/assets/img/certificates/oekotex/oekotex_de.png" alt="Oeko-Tex Certificate" class="oekotex-certificate shadow">
                     <!-- END CERITIFICATE IMAGE -->
                     <!-- START PRODUCT IMAGE -->
-                    <div v-for="product in products" :key="product.id">
-                        <img v-show="product.id === activeId" :src="getImage('src')" :alt="getImage('alt')">
+                    <div v-for="(product, index) in products" :key="index">
+                        <img v-show="product.id === activeId" :src="product.src" :alt="product.alt">
                     </div>
+                    <!-- <div v-for="product in products" :key="product.id">
+                        <img v-show="product.id === activeId" :src="getImage('src', product.id)" :alt="getImage('alt', product.id)">
+                    </div> -->
                     <!-- END PRODUCT IMAGE -->
                 </div>
                 <!-- END PRODUCT WRAPPER -->
@@ -27,7 +30,7 @@
                 <p class="uppercase mb-2">Wähle Deine Größe</p>
                 <!-- END SECONDARY HEADER -->
                 <!-- START BUTTON GROUP -->
-                <base-button-group :products="products" :activeId="activeId" @clicked="setActive"/>
+                <base-button-group :products="items" :activeId="activeId" @clicked="setActive"/>
                 <!-- END BUTTON GROUP -->
                 <!-- START PRODUCT DESCRIPTION -->
                 <p>Teste jetzt unsere Windeln und Feuchttücher - In Größe 1 - 3 enthält unser Testpaket unsere Feuchttücher mit 99 % Wasser, ab Gr. 4 erhältst Du unsere Sensitiven Feuchttücher. Wir zahlen die Produkte, Du nur den Versand.</p>
@@ -63,15 +66,35 @@ export default {
     },
     // END CONFIGURATION
 
+    // START DATA
+    data() {
+        return {
+            products: []
+        };
+    },
+    // END DATA
+
     // START COMPUTED
     computed: {
         // Mapping required state objects
         ...mapState({
-            products: state => state.products.primary.items,
+            items: state => state.products.primary.items,
             activeId: state => state.products.activeId
         })
     },
     // END COMPUTED
+
+    // START CREATED
+    created() {
+        this.items.forEach(element => {
+            this.products.push({
+                id: element.id,
+                src: require('@/assets/img/' + element.image.src),
+                alt: element.image.alt
+            });
+        });
+    },
+    // END CREATED
 
     // START METHODS
     methods: {
@@ -81,19 +104,6 @@ export default {
          */
         setActive(id) {
             this.$store.dispatch('setActive', id);
-        },
-
-        /**
-         * Provide requested image attribute
-         * @param {String} attribute
-         * @return {String}
-         */
-        getImage(attribute) {
-            if (attribute === 'src') {
-                return require('@/assets/img/' + this.products.find(product => product.id === this.activeId).image[attribute]);
-            } else {
-                return this.products.find(product => product.id === this.activeId).image[attribute];
-            }
         }
     }
     // END METHODS

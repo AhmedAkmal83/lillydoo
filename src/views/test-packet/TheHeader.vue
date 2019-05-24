@@ -7,7 +7,7 @@
         <div class="row" :class="viewportIsLarge ? 'h-100' : 'h-60'">
             <div class="columns large-5 flex-container flex-dir-column align-center-middle">
                 <h1 class="text-center">Entdecke unsere Hautfreundlichkeit</h1>
-                <a href="#the-product" class="button large w-80 mt-3">JETZT DEINE GRÖßE WÄHLEN</a>
+                <a href="#the-product" class="button large mt-3" :class="viewportIsLarge ? '' : 'w-80'">JETZT DEINE GRÖßE WÄHLEN</a>
             </div>
         </div>
         <!-- END WRAPPING ROW -->

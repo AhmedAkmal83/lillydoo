@@ -88,7 +88,7 @@ export default new Router({
                                     l1: '3',
                                     l2: '(4-7 KG)'
                                 },
-                                secondaryProduct: 'sensitive-wipes'
+                                secondaryProduct: 'water-wipes'
                             },
                             {
                                 id: 456365233523,
