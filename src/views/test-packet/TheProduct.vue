@@ -11,7 +11,7 @@
                     <!-- END CERITIFICATE IMAGE -->
                     <!-- START PRODUCT IMAGE -->
                     <div v-for="product in products" :key="product.id">
-                        <img v-show="product.id === activeId" :src="imageData('src')" :alt="imageData('alt')">
+                        <img v-show="product.id === activeId" :src="getImage('src')" :alt="getImage('alt')">
                     </div>
                     <!-- END PRODUCT IMAGE -->
                 </div>
@@ -84,11 +84,11 @@ export default {
         },
 
         /**
-         * Build required image attributes
-         * @param {Number} id Integer
+         * Provide requested image attribute
+         * @param {String} attribute
          * @return {String}
          */
-        imageData(attribute) {
+        getImage(attribute) {
             if (attribute === 'src') {
                 return require('@/assets/img/' + this.products.find(product => product.id === this.activeId).image[attribute]);
             } else {

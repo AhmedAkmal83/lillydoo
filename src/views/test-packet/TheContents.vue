@@ -15,15 +15,16 @@
                 <div class="row">
                     <!-- START IMAGE COLUMN -->
                     <div class="columns small-4 pt-5">
-                        <img src="@/assets/img/thumbnails/lillydoo-little-blowballs-design-preview-tp.jpg" alt="Lillydoo Windel Design - Little Blowballs">
+                        <img :src="getPrimary('image', 'src')" :alt="getPrimary('image', 'alt')">
                     </div>
                     <!-- END IMAGE COLUMN -->
                     <!-- START DESCRIPTION COLUMN -->
                     <div class="columns small-8 pt-5 pl-0">
-                        <h6 class="mb-2 uppercase">10 Lillydoo Windeln</h6>
+                        <h6 class="mb-2 uppercase">{{ getPrimary('description', 'header') }}</h6>
                         <ul>
-                            <li>0 % Parfüme & Lotionen, 100 % LILLYDOO Schutz</li>
-                            <li>Extra weich und mit idealer Passform</li>
+                            <li v-for="(detail, index) in getPrimary('description', 'details')" :key="index">
+                                {{ detail }}
+                            </li>
                         </ul>
                     </div>
                     <!-- END DESCRIPTION COLUMN -->
@@ -37,15 +38,16 @@
                 <div class="row">
                     <!-- START IMAGE ROW -->
                     <div class="columns small-4 pt-5">
-                        <img src="@/assets/img/thumbnails/water-wipes-15-small.jpg" alt="LILLYDOO 15 Feuchttücher mit 99% Wasser">
+                        <img :src="getSecondary('image', 'src')" :alt="getSecondary('image', 'alt')">
                     </div>
                     <!-- END IMAGE ROW -->
                     <!-- START DESCRIPTION ROW -->
                     <div class="columns small-8 pt-5 pl-0">
-                        <h6 class="mb-2 uppercase">15 Feuchttücher mit 99 % Wasser</h6>
+                        <h6 class="mb-2 uppercase">{{ getSecondary('description', 'header') }}</h6>
                         <ul>
-                            <li>0 % Parfüme & PEGs, 100 % biologisch abbaubar</li>
-                            <li>Natürlich rein, extra mild, Alternative zu "Wasser & Watte"</li>
+                            <li v-for="(detail, index) in getSecondary('description', 'details')" :key="index">
+                                {{ detail }}
+                            </li>
                         </ul>
                     </div>
                     <!-- END DESCRIPTION ROW -->
@@ -59,4 +61,66 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
+export default {
+    // START COMPUTED
+    computed: {
+        // Mapping required state objects
+        ...mapState({
+            primary: state => state.products.primary.items,
+            secondary: state => state.products.secondary.items,
+            activeId: state => state.products.activeId
+        })
+    },
+    methods: {
+        /**
+         * Provide data requested for primary product
+         * @param {String} type 'image' || 'description'
+         * @return {Mixed} Array || String
+         */
+        getPrimary(type, property) {
+            let item = this.primary.find(product => product.id === this.activeId);
+
+            return type === 'image' ? this.image(item, property) : this.description(item, property);
+        },
+
+        /**
+         * Provide data requested for secondary product
+         * @param {String} type 'image' || 'description'
+         * @return {Mixed} Array || String
+         */
+        getSecondary(type, property) {
+            let name = this.primary.find(product => product.id === this.activeId).secondaryProduct;
+            let item = this.secondary.find(product => product.name === name);
+
+            return type === 'image' ? this.image(item, property) : this.description(item, property);
+        },
+
+        /**
+         * Provide requested image attribute for a specific product
+         * @param {Object} item
+         * @param {String} property
+         * @return {String}
+         */
+        image(item, property) {
+            if (property === 'src') {
+                return require('@/assets/img/' + item.thumbnail[property]);
+            } else {
+                return item.thumbnail[property];
+            }
+        },
+
+        /**
+         * Provide header or description items from product's description
+         * @param {Object} item
+         * @param {String} property
+         * @return {Mixed} Array || String
+         */
+        description(item, property) {
+            return item.description[property];
+        }
+    }
+    // END COMPUTED
+};
 </script>
