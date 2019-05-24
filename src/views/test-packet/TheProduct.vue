@@ -21,7 +21,7 @@
             <!-- START RIGHT SIDE -->
             <div class="columns small-12 large-5">
                 <!-- START MAIN HEADER -->
-                <h2 class="mb2">Unser gratis Testpaket</h2>
+                <h3 class="mb2">Unser gratis Testpaket</h3>
                 <!-- END MAIN HEADER -->
                 <!-- START SECONDARY HEADER -->
                 <p class="uppercase mb-2">Wähle Deine Größe</p>

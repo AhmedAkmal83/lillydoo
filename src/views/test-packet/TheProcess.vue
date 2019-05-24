@@ -3,7 +3,7 @@
         <!-- START HEADER ROW -->
         <div class="row">
             <div class="columns small-12 text-center">
-                <h2>Wie es funktioniert</h2>
+                <h3>Wie es funktioniert</h3>
             </div>
         </div>
         <!-- END HEADER ROW -->
