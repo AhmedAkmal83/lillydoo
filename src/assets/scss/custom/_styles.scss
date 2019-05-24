@@ -2,8 +2,8 @@ h1 {
     font-family: 'Museo-300', Helvetica, Roboto, Arial, sans-serif;
 }
 
-.uppercase {
-    text-transform: uppercase;
+h6 {
+    font-weight: 500;
 }
 
 section {
@@ -13,4 +13,8 @@ section {
     &.dark {
         background: #f8f8f8
     }
+}
+
+.uppercase {
+    text-transform: uppercase;
 }

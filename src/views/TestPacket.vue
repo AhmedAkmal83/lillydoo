@@ -2,7 +2,7 @@
     <div class="test-packet">
         <the-header :viewport-is-large="viewportIsLarge"/>
         <the-product/>
-        <the-process/>
+        <the-process :viewport-is-large="viewportIsLarge"/>
         <the-contents/>
     </div>
 </template>
