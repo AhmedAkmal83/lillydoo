@@ -1,7 +1,7 @@
 <template>
     <div class="test-packet">
         <the-header :viewport-is-large="viewportIsLarge"/>
-        <the-product/>
+        <the-product :viewport-is-large="viewportIsLarge"/>
         <the-process :viewport-is-large="viewportIsLarge"/>
         <the-contents/>
     </div>

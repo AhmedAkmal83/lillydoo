@@ -77,6 +77,9 @@
 @include foundation-visibility-classes;
 // @include foundation-prototype-classes;
 
+@import 'node_modules/motion-ui/src/motion-ui';
+@include motion-ui-transitions;
+@include motion-ui-animations;
 
 /*****************
 * CUSTOM HELPERS *

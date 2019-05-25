@@ -9,11 +9,9 @@
                     <!-- START CERITIFICATE IMAGE -->
                     <img src="../../assets/img/certificates/oekotex/oekotex_de.png" alt="Oeko-Tex Certificate" class="oekotex-certificate shadow">
                     <!-- END CERITIFICATE IMAGE -->
-                    <!-- START PRODUCT IMAGE -->
-                    <a v-for="(product, index) in products" :key="index">
-                        <img v-show="product.id === activeId" :src="product.src" :alt="product.alt">
-                    </a>
-                    <!-- END PRODUCT IMAGE -->
+                    <!-- START IMAGE SLIDER -->
+                    <base-slider :products="products" :viewport-is-large="viewportIsLarge"/>
+                    <!-- END IMAGE SLIDER -->
                 </div>
                 <!-- END PRODUCT WRAPPER -->
             </div>
@@ -27,7 +25,7 @@
                 <p class="uppercase mb-2">Wähle Deine Größe</p>
                 <!-- END SECONDARY HEADER -->
                 <!-- START BUTTON GROUP -->
-                <base-button-group :products="items" :activeId="activeId" @clicked="setActive"/>
+                <base-button-group :products="products" :activeId="activeId" @clicked="setActive"/>
                 <!-- END BUTTON GROUP -->
                 <!-- START PRODUCT DESCRIPTION -->
                 <p>Teste jetzt unsere Windeln und Feuchttücher - In Größe 1 - 3 enthält unser Testpaket unsere Feuchttücher mit 99 % Wasser, ab Gr. 4 erhältst Du unsere Sensitiven Feuchttücher. Wir zahlen die Produkte, Du nur den Versand.</p>
@@ -54,12 +52,21 @@
 
 <script>
 import BaseButtonGroup from '../../components/BaseButtonGroup';
+import BaseSlider from '../../components/BaseSlider';
 import { mapState } from 'vuex';
 
 export default {
     // START CONFIGURATION
     components: {
-        BaseButtonGroup
+        BaseButtonGroup,
+        BaseSlider
+    },
+
+    props: {
+        viewportIsLarge: {
+            type: Boolean,
+            required: true
+        }
     },
     // END CONFIGURATION
 
@@ -88,7 +95,8 @@ export default {
             this.products.push({
                 id: element.id,
                 src: require('../../assets/img/' + element.image.src),
-                alt: element.image.alt
+                alt: element.image.alt,
+                button: element.button
             });
         });
     },
@@ -101,6 +109,9 @@ export default {
          * @param {Number} id Integer
          */
         setActive(id) {
+            // Manually switch product image
+            $('#product-slider').foundation('changeSlide', true, $('#' + id));
+            // Update active product id in store
             this.$store.dispatch('setActive', id);
         }
     }

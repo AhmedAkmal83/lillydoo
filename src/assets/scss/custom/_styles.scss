@@ -18,6 +18,10 @@ section {
     }
 }
 
+img[class*="-certificate"] {
+    z-index: 2;
+ }
+
 /**
  * Helpers
  */
