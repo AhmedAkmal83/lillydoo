@@ -4,7 +4,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store/index';
 
-// Assigning dependencies' globals
+// Assigning vue to window
 window.Vue = Vue;
 
 // Load dependencies

@@ -1,7 +1,7 @@
-/*
-* Generate width helpers
-* (.w-*) 
-*/
+/**
+ * Generate width helpers
+ * (.w-*) 
+ */
 @mixin custom-width-helpers {
     @each $value in $custom-percentages {
         .w-#{$value} {
@@ -10,10 +10,10 @@
     }
 }
 
-/*
-* Generate height helpers
-* (.h-*) 
-*/
+/**
+ * Generate height helpers
+ * (.h-*) 
+ */
 @mixin custom-height-helpers {
     @each $value in $custom-percentages {
         .h-#{$value} {

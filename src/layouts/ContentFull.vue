@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import TheNavigation from '@/components/layout/TheNavigation';
-import TheFooter from '@/components/layout/TheFooter';
+import TheNavigation from '../components/layout/TheNavigation';
+import TheFooter from '../components/layout/TheFooter';
 
 export default {
     // START CONFIGURATION

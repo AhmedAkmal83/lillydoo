@@ -105,7 +105,7 @@ export default {
          */
         image(product, property) {
             if (property === 'src') {
-                return require('@/assets/img/' + product.thumbnail[property]);
+                return require('../../assets/img/' + product.thumbnail[property]);
             } else {
                 return product.thumbnail[property];
             }

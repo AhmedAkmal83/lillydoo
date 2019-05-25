@@ -11,7 +11,7 @@ export default {
     },
 
     /**
-     * Set the active product
+     * Set active product
      * @param {Object} state
      * @param {Number} payload integer
      */

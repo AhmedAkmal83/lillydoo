@@ -65,20 +65,20 @@
 // 1. Global
 // ---------
 
-$global-font-size: 14px; // mod
-$global-width: rem-calc(1280); // mod
+$global-font-size: 14px;
+$global-width: rem-calc(1280);
 $global-lineheight: 1.4;
 $light-gray: #e6e6e6;
-$medium-gray: #cdcdcd; // mod
-$dark-gray: #7c7c7c; // mod
-$black: #000; // mod
-$white: #fff; // mod
+$medium-gray: #cdcdcd;
+$dark-gray: #7c7c7c;
+$black: #000;
+$white: #fff;
 $foundation-palette: (
-    primary: #00afab, // mod
-    secondary: #ffdc0f, // mod
-    success: #43ac6a, // mod
-    warning: #f08a24, // mod
-    alert: #f63440, // mod
+    primary: #00afab,
+    secondary: #ffdc0f,
+    success: #43ac6a,
+    warning: #f08a24,
+    alert: #f63440,
     // custom palette
     tertiary: #a7bcd7,
     bright: #fff,
@@ -91,12 +91,12 @@ $foundation-palette: (
 );
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: Montserrat, Helvetica, Roboto, Arial, sans-serif; // mod
+$body-font-family: Montserrat, Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
 $global-position: 1rem;
-$global-weight-normal: 400; // mod
+$global-weight-normal: 400;
 $global-weight-bold: bold;
 $global-radius: 0;
 $global-menu-padding: 0.7rem 1rem;
@@ -115,8 +115,8 @@ $print-transparent-backgrounds: true;
 
 $breakpoints: (
     small: 0,
-    medium: 415px, // mod
-    large: 836px, // mod
+    medium: 415px,
+    large: 836px,
     xlarge: 1200px,
     xxlarge: 1440px,
 );
@@ -139,12 +139,12 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: Montserrat, Helvetica, Roboto, Arial, sans-serif; // mod
-$header-font-weight: 400; // mod
+$header-font-family: Montserrat, Helvetica, Roboto, Arial, sans-serif;
+$header-font-weight: 400;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
-$header-lineheight: 1.2; // mod
+$header-lineheight: 1.2;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
     small: (
@@ -309,7 +309,7 @@ $button-sizes: (
     tiny: 0.6rem,
     small: 0.75rem,
     default: 0.9rem,
-    large: 1.063rem, // mod
+    large: 1.063rem,
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
@@ -872,7 +872,7 @@ $topbar-unstack-breakpoint: medium;
 // 56. Xy Grid
 // -----------
 
-$xy-grid: false; // mod
+$xy-grid: false;
 $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (

@@ -8,6 +8,7 @@
 </template>
 
 <script>
+// Import main view sections
 import TheHeader from './test-packet/TheHeader';
 import TheProduct from './test-packet/TheProduct';
 import TheProcess from './test-packet/TheProcess';
@@ -40,9 +41,9 @@ export default {
 
     // START HOOKS
     created() {
-        // Display with respect to viewport size
+        // Initial display with respect to current viewport size
         this.handleViewportSize(Foundation.MediaQuery.current);
-        // Keeping an eye on viewport size and calling handler accordingly
+        // Keeping an eye on viewport size and calling handler whenever changed
         $(window).on('changed.zf.mediaquery', (event, newSize, oldSize) => {
             this.handleViewportSize(newSize);
         });
@@ -54,8 +55,8 @@ export default {
     // START METHODS
     methods: {
         /**
-         * Define which layout should be used to serve the current view
-         * @return {String} The meta property for the current layout
+         * Update boolean indicating if current viewport size is (large || xlarge || xxlarge)
+         * @param {String} viewportSize small || medium || large || xlarge || xxlarge
          */
         handleViewportSize(viewportSize) {
             this.viewportIsLarge = viewportSize.includes('large');

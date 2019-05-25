@@ -62,7 +62,7 @@ export default {
 <style lang="scss" scoped>
 .icon-circle {
     color: transparent !important;
-    border: 2px solid black;
+    border: 2px solid $medium-gray;
     border-radius: 50%;
 }
 </style>

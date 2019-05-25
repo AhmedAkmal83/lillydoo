@@ -1,7 +1,7 @@
-/*
-* Generate margin helpers for the defined spacers
-* (.mt-* , .mr-*, .mb-*, .ml-*, .mx-*, .my-*, .m-*) 
-*/
+/**
+ * Generate margin helpers for the defined spacers
+ * (.mt-* , .mr-*, .mb-*, .ml-*, .mx-*, .my-*, .m-*)
+ */
 @mixin custom-margin-helpers {
     @each $name, $value in $custom-spacers {
         .mt-#{$name} {
@@ -30,10 +30,10 @@
     }
 }
 
-/*
-* Generate padding helpers for the defined spacers
-* (.pt-* , .pr-*, .pb-*, .pl-*, .px-*, .py-*, .p-*) 
-*/
+/**
+ * Generate padding helpers for the defined spacers
+ * (.pt-* , .pr-*, .pb-*, .pl-*, .px-*, .py-*, .p-*) 
+ */
 @mixin custom-padding-helpers {
     @each $name, $value in $custom-spacers {
         .pt-#{$name} {

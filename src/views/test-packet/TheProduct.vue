@@ -7,15 +7,12 @@
                 <!-- START PRODUCT WRAPPER -->
                 <div class="product-wrapper text-center">
                     <!-- START CERITIFICATE IMAGE -->
-                    <img src="@/assets/img/certificates/oekotex/oekotex_de.png" alt="Oeko-Tex Certificate" class="oekotex-certificate shadow">
+                    <img src="../../assets/img/certificates/oekotex/oekotex_de.png" alt="Oeko-Tex Certificate" class="oekotex-certificate shadow">
                     <!-- END CERITIFICATE IMAGE -->
                     <!-- START PRODUCT IMAGE -->
-                    <div v-for="(product, index) in products" :key="index">
+                    <a v-for="(product, index) in products" :key="index">
                         <img v-show="product.id === activeId" :src="product.src" :alt="product.alt">
-                    </div>
-                    <!-- <div v-for="product in products" :key="product.id">
-                        <img v-show="product.id === activeId" :src="getImage('src', product.id)" :alt="getImage('alt', product.id)">
-                    </div> -->
+                    </a>
                     <!-- END PRODUCT IMAGE -->
                 </div>
                 <!-- END PRODUCT WRAPPER -->
@@ -56,7 +53,7 @@
 </template>
 
 <script>
-import BaseButtonGroup from '@/components/BaseButtonGroup';
+import BaseButtonGroup from '../../components/BaseButtonGroup';
 import { mapState } from 'vuex';
 
 export default {
@@ -86,10 +83,11 @@ export default {
 
     // START CREATED
     created() {
+        // Prepare array with products' (src && alt && description)
         this.items.forEach(element => {
             this.products.push({
                 id: element.id,
-                src: require('@/assets/img/' + element.image.src),
+                src: require('../../assets/img/' + element.image.src),
                 alt: element.image.alt
             });
         });

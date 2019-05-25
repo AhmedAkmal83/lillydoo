@@ -14,7 +14,7 @@ window.$ = window.jQuery = jQuery;
 window.whatInput = whatInput;
 window.Foundation = Foundation;
 
-// Adding only required icons to output bundle
+// Adding only required icons to font awesome's output bundle
 library.add(faGift, faLockOpen, faBox, faSyncAlt, faCircle);
 
 // Register font awesome's icons as vue global components

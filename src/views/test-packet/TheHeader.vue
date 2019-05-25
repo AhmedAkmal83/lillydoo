@@ -1,7 +1,7 @@
 <template>
     <section id="the-header" data-interchange="[assets/img/lillydoo-testpaket-header-small.jpg, small], [assets/img/lillydoo-testpaket-header-medium.jpg, medium], [assets/img/lillydoo-testpaket-header-large.jpg, large]">
         <!-- START CERITIFICATE IMAGE -->
-        <img src="@/assets/img/certificates/oekotex/oekotex_de.png" alt="Oeko-Tex Certificate" class="oekotex-certificate shadow">
+        <img src="../../assets/img/certificates/oekotex/oekotex_de.png" alt="Oeko-Tex Certificate" class="oekotex-certificate shadow">
         <!-- END CERITIFICATE IMAGE -->
         <!-- START WRAPPING ROW -->
         <div class="row" :class="viewportIsLarge ? 'h-100' : 'h-60'">
@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 section {
-    background: #e2e2e0 no-repeat center / cover;
+    background: get-color(dark) no-repeat center / cover;
     height: 100vh;
     min-height: 320px;
     max-height: 550px;

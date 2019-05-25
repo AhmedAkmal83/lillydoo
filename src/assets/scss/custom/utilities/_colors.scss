@@ -1,7 +1,7 @@
-/*
-* Generate color and background helpers for the whole foundation palette
-* (.color-* , .bg-*) 
-*/
+/**
+ * Generate color and background helpers for the whole foundation palette
+ * (.color-* , .bg-*)
+ */
 @mixin custom-color-helpers {
     @each $name, $color in $foundation-palette {
         .color-#{$name} {

@@ -6,8 +6,8 @@
 
 <script>
 // Import layouts
-import ContentFull from '@/layouts/ContentFull';
-import ContentMinimal from '@/layouts/ContentMinimal';
+import ContentFull from './layouts/ContentFull';
+import ContentMinimal from './layouts/ContentMinimal';
 
 export default {
     // START CONFIGURATION
@@ -39,5 +39,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/scss/app.scss';
+@import './src/assets/scss/app.scss';
 </style>
