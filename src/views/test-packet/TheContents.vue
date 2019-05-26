@@ -91,8 +91,8 @@ export default {
          * @return {Mixed} Array || String
          */
         getSecondary(type, property) {
-            let name = this.primary.find(product => product.id === this.activeId).secondaryProduct;
-            let product = this.secondary.find(product => product.name === name);
+            let id = this.primary.find(product => product.id === this.activeId).secondaryProduct;
+            let product = this.secondary.find(product => product.id === id);
 
             return type === 'image' ? this.image(product, property) : this.description(product, property);
         },

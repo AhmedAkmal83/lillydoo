@@ -40,7 +40,7 @@ export default new Router({
                                     l1: '1',
                                     l2: '(2-3 KG)'
                                 },
-                                secondaryProduct: 'water-wipes'
+                                secondaryProduct: 389287103236
                             },
                             {
                                 id: 545432898121,
@@ -64,7 +64,7 @@ export default new Router({
                                     l1: '2',
                                     l2: '(3-4 KG)'
                                 },
-                                secondaryProduct: 'water-wipes'
+                                secondaryProduct: 389287103236
                             },
                             {
                                 id: 982364235123,
@@ -88,7 +88,7 @@ export default new Router({
                                     l1: '3',
                                     l2: '(4-7 KG)'
                                 },
-                                secondaryProduct: 'water-wipes'
+                                secondaryProduct: 389287103236
                             },
                             {
                                 id: 456365233523,
@@ -112,7 +112,7 @@ export default new Router({
                                     l1: '4',
                                     l2: '(7-10 KG)'
                                 },
-                                secondaryProduct: 'sensitive-wipes'
+                                secondaryProduct: 618722830239
                             },
                             {
                                 id: 987123543544,
@@ -136,7 +136,7 @@ export default new Router({
                                     l1: '5',
                                     l2: '(10-12 KG)'
                                 },
-                                secondaryProduct: 'sensitive-wipes'
+                                secondaryProduct: 618722830239
                             }
                         ]
                     },

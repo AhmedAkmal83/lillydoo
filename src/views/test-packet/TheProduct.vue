@@ -3,7 +3,7 @@
         <!-- START WRAPPING ROW -->
         <div class="row align-justify">
             <!-- START LEFT SIDE -->
-            <div class="columns small-12 large-6">
+            <div class="columns small-12 large-6" :class="!viewportIsLarge ? 'pb-5' : ''">
                 <!-- START PRODUCT WRAPPER -->
                 <div class="product-wrapper text-center">
                     <!-- START CERITIFICATE IMAGE -->
